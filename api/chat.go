@@ -257,7 +257,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	reader := bufio.NewReaderSize(resp.Body, 256)
+	reader := bufio.NewReader(resp.Body)
 	for {
 		line, err := reader.ReadString('\n')
 		if err != nil {
